@@ -356,4 +356,51 @@ $('.homeSlider').owlCarousel({
     })
 
 
- 
+
+// $(function(){
+    
+//     $("[data-toggle=popover]").popover({
+//         html : true,
+//         content: function() {
+//             var content = $(this).attr("data-popover-content");
+//             return $(content).children(".popover-body").html();
+//         },
+//         title: function() {
+//             var title = $(this).attr("data-popover-content");
+//             return $(title).children(".popover-heading").html();
+//         }
+//     });
+    
+// });
+
+
+$(document).ready(function() {
+                    
+                    var options = {
+                        html: true,
+                        // title: "Optional: HELLO(Will overide the default-the inline title)",
+                        //html element
+                        //content: $("#popover-content")
+                        content: $('[data-name="popover-content"]')
+                        //Doing below won't work. Shows title only
+                        //content: $("#popover-content").html()
+            
+                    }
+                    var exampleEl = document.getElementById('example')
+                    var popover = new bootstrap.Popover(exampleEl, options)
+                })
+
+
+
+$(document).ready(function() {
+
+  $(`[unique-script-id="w-w-dm-id"] .btn-box`).click(function() {
+    $(this).parent().children(".overlay").show();
+
+  });
+
+
+  $(`[unique-script-id="w-w-dm-id"] .close`).click(function() {
+    $(".overlay").hide();
+  });
+});
